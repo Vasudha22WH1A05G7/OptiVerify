@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiVerify.com - Role Selection</title>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #87CEEB, #4682B4, #6C63FF, #9b59b6);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            color: #fff;
+            overflow: hidden; /* Prevent background overflow */
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            text-align: left;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            margin-bottom: 10px;
+        }
+
+        #website-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 10%;
+            margin-bottom: 10px;
+        }
+
+        #website-name {
+            color: #6C63FF;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        #tagline {
+            color: #fff;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        #welcome {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 40px 20px; /* Increased padding */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            margin: 50px 0; /* Adjusted margin */
+            position: relative;
+            overflow: hidden;
+        }
+
+        #welcome-text {
+            position: relative;
+            z-index: 1;
+            font-size: 28px;
+            font-weight: bold;
+            color: #5348E2; /* Highlight color */
+            margin-bottom: 20px; /* Adjusted margin */
+            white-space: nowrap; /* Prevent wrapping */
+        }
+
+        #welcome-box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #6C63FF, #5348E2);
+            transform-origin: right bottom;
+            transform: rotate(-45deg);
+            z-index: 0;
+        }
+
+        .role-selection {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            width: 300px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .about-us {
+            background-color: rgba(255, 255, 255, 0.95); /* Increase opacity for better visibility */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            width: 80%;
+            max-width: 600px;
+            text-align: left;
+            margin: 50px 0; /* Adjusted margin */
+            color: #333; /* Darken text color for better readability */
+        }
+
+        .about-us h2 {
+            color: #5348E2; /* Highlight "About Us" heading */
+            margin-bottom: 15px; /* Add space below heading */
+        }
+
+        .about-us p {
+            line-height: 1.6;
+        }
+
+        h2 {
+            color: #333; /* Make "Select Your Role" text more visible */
+        }
+
+        button {
+            background-color: #6C63FF;
+            color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 10px 5px;
+            width: 100%;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #5348E2;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div id="website-info">
+        <div id="website-name">
+            OptiVerify
+        </div>
+        <div id="tagline">
+            - Redefining Serviceability
+        </div>
+    </div>
+</header>
+
+<div id="welcome">
+    <div id="welcome-text">Welcome to OptiVerify</div>
+    <div id="welcome-box"></div>
+</div>
+
+<div class="role-selection">
+    <h2>Select Your Role</h2>
+    <button onclick="redirectToSignup('buyer')">I'm a Buyer</button>
+    <button onclick="redirectToSignup('merchant')">I'm a Merchant</button>
+</div>
+
+<div class="about-us">
+    <h2>About Us</h2>
+    <p>
+        At OptiVerify, we redefine serviceability through optimal searches of pincodes and merchants. 
+        Our platform empowers merchants to define the pincodes they serve, while providing buyers with 
+        real-time verification of serviceability. With a focus on over 30K pincodes and millions of 
+        merchants, our data structure ensures near-instantaneous verification, enhancing the retail 
+        and logistics experience.
+    </p>
+</div>
+
+<script>
+    function redirectToSignup(role) {
+        if (role === 'buyer') {
+            window.location.href = 'http://127.0.0.1:5500/ecommerce/project_directory/templates/buyer.html';
+        } else if (role === 'merchant') {
+            window.location.href = 'merchantlogin.html';
+        }
+    }
+</script>
+
+</body>
+</html>

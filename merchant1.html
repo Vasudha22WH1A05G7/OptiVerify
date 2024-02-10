@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiVerify.com - Merchant Registration</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #87CEEB, #4682B4, #6C63FF, #9b59b6);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #fff;
+        }
+
+        .registration-form {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #6C63FF; /* Change text color for better visibility */
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            color: #333; /* Darken label text color for better readability */
+        }
+
+        button {
+            background-color: #5348E2;
+            color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #4682B4;
+        }
+
+        #otherCategoryInput {
+            display: none;
+        }
+
+        #pincodeValidationMessage {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="registration-form">
+    <h2>Merchant Registration</h2>
+    <form id="merchantRegistrationForm">
+        <label for="mobileNumber">Mobile Number:</label>
+        <input type="tel" id="mobileNumber" name="mobileNumber" placeholder="Enter Mobile Number" required>
+
+        <label for="cityPincode">City Pincode:</label>
+        <input type="text" id="cityPincode" name="cityPincode" placeholder="Enter City Pincode" required>
+
+        <label for="brandName">Brand Name:</label>
+        <input type="text" id="brandName" name="brandName" placeholder="Enter Brand Name" required>
+
+        <label for="productCategory">Product Category:</label>
+        <select id="productCategory" name="productCategory" onchange="handleCategoryChange()" required>
+            <option value="clothing">Clothing</option>
+            <option value="electronics">Electronics</option>
+            <option value="furniture">Furniture</option>
+            <option value="groceries">Groceries</option>
+            <option value="jewelry">Jewelry</option>
+            <option value="other">Other</option>
+            <!-- Add more options as needed -->
+        </select>
+
+        <div id="otherCategoryInput">
+            <label for="otherCategory">Specify Other Category:</label>
+            <input type="text" id="otherCategory" name="otherCategory" placeholder="Enter Other Category">
+        </div>
+
+        <label>Serviceable Pincodes:</label>
+        <input type="text" id="servicePincodes" name="servicePincodes" placeholder="Enter Serviceable Pincodes (comma-separated)" required>
+        <span id="pincodeValidationMessage"></span>
+
+        <button type="button" onclick="submitRegistrationForm()">Submit</button>
+    </form>
+</div>
+
+<script>
+    function handleCategoryChange() {
+        var productCategory = document.getElementById("productCategory").value;
+        var otherCategoryInput = document.getElementById("otherCategoryInput");
+
+        if (productCategory === "other") {
+            otherCategoryInput.style.display = "block";
+        } else {
+            otherCategoryInput.style.display = "none";
+        }
+    }
+
+    function submitRegistrationForm() {
+        var mobileNumber = document.getElementById("mobileNumber").value;
+        var cityPincode = document.getElementById("cityPincode").value;
+        var brandName = document.getElementById("brandName").value;
+        var productCategory = document.getElementById("productCategory").value;
+
+        if (productCategory === "other") {
+            // If "Other" is selected, use the specified other category
+            productCategory = document.getElementById("otherCategory").value;
+        }
+
+        var servicePincodes = document.getElementById("servicePincodes").value;
+
+        // Skip pincode validation
+
+        // Perform validation or send data to a server here
+
+        alert("Merchant Registration successful!\nMobile Number: " + mobileNumber +
+              "\nCity Pincode: " + cityPincode +
+              "\nBrand Name: " + brandName +
+              "\nProduct Category: " + productCategory +
+              "\nServiceable Pincodes: " + servicePincodes);
+    }
+</script>
+
+</body>
+</html>
