@@ -46,7 +46,7 @@ class SparseMatrix:
         return indices[0] if indices else -1
 
 def create_sparse_matrix():
-    dataset_path = "C:\\Users\\ungar\\Downloads\\merchantid.csv"
+    dataset_path = "merchantid.csv"
     df = pd.read_csv(dataset_path)
 
     print("DataFrame Columns:", df.columns)
