@@ -47,4 +47,4 @@ OptiVerify is a comprehensive platform designed to optimize the verification of 
 
 ---
 
-OptiVerify.com aims to create a seamless and efficient experience for both buyers and merchants, ensuring that serviceability is always clear and reliable. Join us in redefining serviceability!
+OptiVerify aims to create a seamless and efficient experience for both buyers and merchants, ensuring that serviceability is always clear and reliable. Join us in redefining serviceability!
